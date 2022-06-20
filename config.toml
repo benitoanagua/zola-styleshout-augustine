@@ -13,4 +13,65 @@ build_search_index = true
 highlight_code = true
 
 [extra]
-# Put all your custom variables here
+
+# Header
+main_menu = [
+    { name = "Intro", link = "#intro" },
+    { name = "About", link = "#about" },
+    { name = "Works", link = "#works" },
+    { name = "Contact", link = "#colophon" }
+]
+social_icons = [
+    { title="Facebook", link="#0" },
+    { title="Twitter", link="#0" },
+    { title="Github", link="#0" },
+    { title="Dribbble", link="#0" }
+]
+
+# Intro
+intro = { label = "Augustine", before = "Digital Designer", after = "Developer", image = "images/intro-bg.jpg"}
+
+# About
+about = { label = "About Me", attention = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu consectetur adipiscing elit, sed do eiusmod." }
+resume = { pretitle = "Resume", huge_title= "Here is my education, work experience, & some skills I've got." }
+timeline = { experience = "Experience", education = "Education" }
+experience = [
+    { title = "Spotify", meta = "Product Designer", start = "August 2019", end  = "Present", desc = "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi."},
+    { title = "Dropbox", meta = "Frontend Developer", start = "March 2016", end  = "July 2019", desc = "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi."}
+]
+education = [
+    { title = "University of Life", meta = "Master in Graphic Design", time  = "April 2015", desc = "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi."},
+    { title = "School of Cool Designers", meta = "B.A. Degree in Graphic Design", time  = "August 2012", desc = "Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi."}
+]
+# percent is 5, 10, ... 95, 100
+skills = [
+    { label = "HTML & SCSS", percent = 95 },
+    { label = "Javascript ES6+", percent = 85 },
+    { label = "React", percent = 70 },
+    { label = "Node JS", percent = 75 },
+    { label = "Wordpress", percent = 85 },
+    { label = "Figma", percent = 90 },
+    { label = "Sketch", percent = 85 },
+    { label = "Illustrator", percent = 75 }
+]
+clients = [
+    { label = "Microsoft", link = "#0" },
+    { label = "Amazon", link = "#0" },
+    { label = "Solana", link = "#0" },
+    { label = "Nike", link = "#0" },
+    { label = "Adidas", link = "#0" },
+    { label = "Polkadot", link = "#0" },
+    { label = "Google", link = "#0" },
+    { label = "Atom", link = "#0" },
+    { label = "Square", link = "#0" },
+    { label = "Braver", link ="#0" }
+]
+
+# footer
+colophon = { pretitle = "Get In Touch", huge_title = "Feel free to reach out if you wanna collaborate with me, or simply have a chat." }
+contact_content = "Dolorum est et corporis. Unde nobis quo rerum aspernatur cum dolorem tempore et. Beatae atque nobis qui nam nulla nihil sunt quis. Earum minima cum consectetur ab repudiandae sed esse dolores."
+say_hello = { label = "Say Hello", link = "sayhello@augustine.com" }
+get_cv = { label = "Get My CV", link = "#0" }
+phone = { label = "+197 543 2345", link = "+1975432345" }
+subtitles = { contact = "Start A Project", connect = "Connect" }
+copyright = { year = "© Copyright Augustine 2022", by = "Design by", link = "https://www.styleshout.com/", label = "StyleShout"}

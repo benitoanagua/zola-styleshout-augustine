@@ -1,0 +1,68 @@
+<!-- # site footer
+================================================== -->
+<footer id="colophon" class="s-footer">
+
+    <div class="row s-footer__contact-header">
+        <div class="column lg-12">
+            <h2 class="text-pretitle">{{ config.extra.colophon.pretitle }}</h2>
+            <p class="text-huge-title">{{ config.extra.colophon.huge_title }}</p>
+        </div>
+    </div> <!-- end s-footer__content -->
+
+    <div class="row s-footer__contact-content">
+
+        <div class="column lg-5 md-6 stack-on-900 left-block">
+            <p>{{ config.extra.contact_content }}
+            <div class="s-footer__buttons">
+                <a href="mailto:{{ config.extra.say_hello.link }}" class="btn btn--primary u-fullwidth">{{
+                    config.extra.say_hello.label
+                    }}</a>
+                <a href="{{ config.extra.get_cv.link }}" class="btn btn--stroke u-fullwidth">{{
+                    config.extra.get_cv.label
+                    }}</a>
+            </div>
+            </p>
+        </div>
+
+        <div class="column lg-4 md-5 stack-on-900 right-block">
+
+            <div class="s-footer__contact-info">
+                <h2 class="text-subtitle">{{ config.extra.subtitles.contact }}</h2>
+                <ul class="link-list">
+                    <li><a href="mailto:{{ config.extra.say_hello.link }}">{{ config.extra.say_hello.link }}</a>
+                    </li>
+                    <li><a href="tel:{{ config.extra.phone.link }}">{{ config.extra.phone.label }}</a></li>
+                </ul>
+            </div>
+
+            <div class="s-footer__social">
+                <h2 class="text-subtitle">{{ config.extra.subtitles.connect }}</h2>
+                <ul class="link-list">
+                    {% for social in config.extra.social_icons %}
+                    <li>
+                        <a href="{{ get_url(path=social.link) | safe }}">{{ social.title }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+    </div> <!-- end s-footer__contact-content -->
+
+    <div class="row s-footer__bottom">
+        <div class="column ss-copyright">
+            <span>{{ config.extra.copyright.year }}</span>
+            <span>{{ config.extra.copyright.by }}
+                <a href="{{ config.extra.copyright.link }}">{{ config.extra.copyright.label }}</a>
+            </span>
+        </div>
+
+        <div class="ss-go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top">
+                {{ macros:: icon(label = "top") }}
+            </a>
+        </div>
+    </div> <!-- end s-footer__bottom-->
+
+</footer> <!-- end s-footer -->

@@ -1,0 +1,107 @@
+<!-- about
+================================================== -->
+<section id="about" class="s-about">
+
+    <div class="s-about__block s-about__intro">
+
+        <div class="row">
+            <div class="column lg-12">
+                <h2 class="text-pretitle animate-on-load">{{ config.extra.about.label }}</h2>
+                <p class="attention-getter animate-on-load">{{ config.extra.about.attention }}</p>
+            </div>
+        </div>
+
+    </div> <!-- end s-about__intro -->
+
+    <div class="s-about__block s-about__career">
+
+        <div class="row s-about__career-header">
+            <div class="column lg-12">
+                <h2 class="text-pretitle">{{ config.extra.resume.pretitle }}</h2>
+                <p class="text-huge-title">{{ config.extra.resume.huge_title }}</p>
+            </div>
+        </div>
+
+        <div class="row s-about__timeline" data-animate-block>
+            <div class="column lg-6 stack-on-900 s-about__timeline-section" data-animate-el>
+
+                <h2 class="text-subtitle">{{ config.extra.timeline.experience }}</h2>
+
+                <div class="timeline">
+                    {% for item in config.extra.experience %}
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h4 class="timeline__title">{{ item.title }}</h4>
+                            <h5 class="timeline__meta">{{ item.meta }}</h5>
+                            <p class="timeline__timeframe">{{ item.start }} - {{ item.end }}</p>
+                        </div>
+                        <div class="timeline__desc">
+                            <p>{{ item.desc }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div> <!-- end timeline -->
+
+            </div> <!-- end s-about__timeline-section -->
+
+            <div class="column lg-6 stack-on-900 s-about__timeline-section" data-animate-el>
+
+                <h2 class="text-subtitle">{{ config.extra.timeline.education }}</h2>
+
+                <div class="timeline">
+                    {% for item in config.extra.education %}
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <h4 class="timeline__title">{{ item.title }}</h3>
+                                <h5 class="timeline__meta">{{ item.meta }}</h5>
+                                <p class="timeline__timeframe">{{ item.time }}</p>
+                        </div>
+                        <div class="timeline__desc">
+                            <p>{{ item.desc }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div> <!-- end timeline -->
+
+            </div> <!-- end s-about__timeline-section -->
+
+        </div> <!-- end about__timeline -->
+
+        <div class="row s-about__skills" data-animate-block>
+            <div class="column lg-12" data-animate-el>
+
+                <h2 class="text-subtitle">
+                    Skills & Expertise
+                </h2>
+
+                <ul class="skill-bars">
+                    {% for item in config.extra.skills %}
+                    <li>
+                        <div class="progress percent{{ item.percent }}"></div>
+                        <strong>{{ item.label }}</strong>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div> <!-- end s-about__skills -->
+
+        <div class="row s-about__clients" data-animate-block>
+            <div class="column lg-12" data-animate-el>
+
+                <h2 class="text-pretitle">Selected Clients</h2>
+
+                <ul class="clients-list text-huge-title">
+                    {% for item in config.extra.clients %}
+                    <li><a href="{{ item.link }}">{{ item.label }}</a></li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div> <!-- end s-about__clients-->
+
+    </div> <!-- end s-about__career -->
+
+</section> <!-- end s-about -->

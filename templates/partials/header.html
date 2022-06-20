@@ -1,0 +1,43 @@
+<!-- # site header 
+================================================== -->
+<header id="masthead" class="s-header">
+    <div class="s-header__block">
+        <div class="s-header__branding">
+            <p class="site-title">
+                <a href="index.html" rel="home">Augustine.</a>
+            </p>
+        </div>
+
+        <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+    </div>
+    <!-- end s-header__block -->
+
+    <div class="row s-header__nav-wrap">
+        <nav class="s-header__nav">
+            <ul>
+                {% for item in config.extra.main_menu %}
+                <li>
+                    <a href="{{ get_url(path=item.link) | safe }}" class="smoothscroll">
+                        {{ item.name }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <!-- end s-header__nav -->
+
+        <ul class="s-header__social">
+            {% for icon in config.extra.social_icons %}
+            <li>
+                <a href="{{ get_url(path=icon.link) | safe }}">
+                    {{ macros::icon(label=icon.title | lower) }}
+                    <span class="u-screen-reader-text">{{ icon.title }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <!-- end s-header__social -->
+    </div>
+    <!-- end s-header__nav-wrap -->
+</header>
+<!-- end s-header -->
