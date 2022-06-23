@@ -1,0 +1,5 @@
+{% macro taxonomy(terms) %}
+{% for item in terms %}
+{{ item }}{% if not loop.last %},{% endif %}
+{% endfor %}
+{% endmacro icon %}

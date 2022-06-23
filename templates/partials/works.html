@@ -1,0 +1,78 @@
+{% set portfolio = get_section(path="portfolio/_index.md") %}
+{% set testimonials = get_section(path="testimonials/_index.md") %}
+
+<!-- # works
+================================================== -->
+<section id="works" class="s-works">
+
+    <div class="row">
+        <div class="column lg-12">
+            <h2 class="text-pretitle">{{ portfolio.title }}</h2>
+            <p class="text-huge-title">{{ portfolio.description }}</p>
+        </div>
+    </div>
+
+    <div class="row folio-list block-lg-one-half block-stack-on-550" data-animate-block>
+        {% for portfolio_path in portfolio.pages %}
+        <div class="column" data-animate-el>
+            {% set item = get_page(path=portfolio_path.relative_path) %}
+            {% set img_path = portfolio_path.path %}
+            <div class="folio-item">
+                <div class="folio-item__thumb">
+                    <a class="folio-item__thumb-link" href="{{ img_path ~ item.extra.image.gallery }}"
+                        Title="{{ item.title }}" data-size="1050x700">
+                        <img src="{{ img_path ~ item.extra.image.default }}"
+                            srcset="{{ img_path ~ item.extra.image.default }} 1x, {{ img_path ~ item.extra.image.retina }} 2x"
+                            alt="">
+                    </a>
+                </div>
+                <div class="folio-item__info">
+                    <div class="folio-item__meta">
+                        <span class="cat">{{ taxonomies::taxonomy(terms = item.taxonomies.categories) }}</span>
+                        {# <span class="cat">{{ item.taxonomies.categories }}</span> #}
+                        <a href="{{ item.extra.project.link }}" title="{{ item.extra.project.title }}"
+                            class="project-link">{{ item.extra.project.title }}</a>
+                    </div>
+                    <h4 class="folio-item__title">{{ item.title }}</h4>
+                </div>
+                <div class="folio-item__caption">
+                    <p>{{ item.description }}</p>
+                </div>
+            </div>
+        </div> <!-- end column -->
+        {% endfor %}
+    </div> <!-- folio-list -->
+
+    <div class="row testimonials">
+        <div class="column lg-12">
+
+            <div class="swiper testimonial-slider">
+
+                <div class="swiper-wrapper">
+                    {% for testimonials_path in testimonials.pages %}
+                    <div class="testimonial-slider__slide swiper-slide">
+                        {% set item = get_page(path=testimonials_path.relative_path) %}
+                        <p>{{ item.content | striptags }}</p>
+                        <div class="testimonial-slider__author">
+                            <img src="{{ testimonials_path.path ~ item.extra.avatar }}" alt="Author image"
+                                class="testimonial-slider__avatar">
+                            <cite class="testimonial-slider__cite">
+                                <strong>{{ item.title }}</strong>
+                                <span>{{ item.description }}</span>
+                            </cite>
+                        </div>
+                    </div> <!-- end testimonial-slider__slide -->
+                    {% endfor %}
+                </div> <!-- end swiper-wrapper -->
+
+                <div class="testimonial-slider__next">{{ icons::svgIcon(label = "next") }} </div>
+                <div class="testimonial-slider__prev">{{ icons::svgIcon(label = "prev") }}</div>
+
+                <div class="swiper-pagination"></div>
+
+            </div> <!-- end testimonial-slider -->
+
+        </div> <!-- end column -->
+    </div> <!-- end row testimonials -->
+
+</section> <!-- end s-works -->

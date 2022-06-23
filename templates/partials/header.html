@@ -30,7 +30,7 @@
             {% for icon in config.extra.social_icons %}
             <li>
                 <a href="{{ get_url(path=icon.link) | safe }}">
-                    {{ macros::icon(label=icon.title | lower) }}
+                    {{ icons::svgIcon(label=icon.title | lower) }}
                     <span class="u-screen-reader-text">{{ icon.title }}</span>
                 </a>
             </li>
